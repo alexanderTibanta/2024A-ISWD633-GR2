@@ -30,6 +30,9 @@ Descargar la imagen **hello-world**
 # COMPLETAR
 
 **¿Qué es nginx**
+**NGINX es un software de servidor web de código abierto que se utiliza para proxy inverso, equilibrio de carga y almacenamiento en caché.**
+**Proporciona capacidades de servidor HTTPS y está diseñado principalmente para obtener el máximo rendimiento y estabilidad.**
+**También funciona como servidor proxy para protocolos de comunicaciones por correo electrónico, como IMAP, POP3 y SMTP.**
 # COMPLETAR 
 
 Descargar la imagen  **nginx** en la versión **alpine**
@@ -50,20 +53,25 @@ En Docker, se utilizan varios identificadores para diferenciar de manera única 
 El comando docker inspect se utiliza para obtener información detallada sobre un objeto de Docker específico, como un contenedor, una imagen, un volumen o una red.  Proporciona información en formato JSON sobre el objeto especificado.
 
 ```
-docker inspect <nombre imagen>
-docker inspect <nombre imagen>:<tag>
+docker inspect hello-world
 ```
 
 Inspeccionar la imagen hello-world 
+![imagenes](imagenes/imagenhelloworld1.png)
+![imagenes](imagenes/imagenhelloworld2.png)
 # COMPLETAR
 
-**¿Con qué algoritmo se está generando el ID de la imagen**
+**¿Con qué algoritmo se está generando el ID de la imagen?**
+**El ID de la imagen Docker se genera utilizando un algoritmo de hash seguro. En concreto, Docker utiliza el algoritmo de hash SHA-256 para generar el ID único de cada imagen.**
+**Este algoritmo es ampliamente utilizado en la industria de la seguridad y se considera seguro y resistente a colisiones.**
+**Cada vez que se crea una nueva imagen o se realiza un cambio en una imagen existente, Docker genera un nuevo ID de imagen utilizando este algoritmo.** 
+**Esto garantiza la integridad y la unicidad de cada imagen en el sistema Docker.**
 # COMPLETAR
 
 ### Filtrar imágenes
 
 ```
-docker images | grep <termino a buscar>
+docker images | findstr "hello-world"
 
 ```
 
@@ -71,7 +79,7 @@ docker images | grep <termino a buscar>
 Eliminar permanentemente la imagen de tu sistema Docker.
 
 ```
-docker rmi <nombre imagen>:<tag>
+docker rmi hello-world
 ```
 
 Eliminar la imagen hello-world 
@@ -84,6 +92,6 @@ Eliminar una imagen no afecta a los contenedores que se han creado a partir de e
 Es una buena práctica detener y eliminar todos los contenedores que dependan de una imagen antes de eliminar la imagen en sí.
 
 ```
-docker rmi -f <nombre imagen>:<tag>
+docker rmi -f nginx:alpine
 ```
 
